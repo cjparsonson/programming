@@ -25,15 +25,17 @@ def slice_and_dice(text: str = TEXT) -> List[str]:
     See the Bite description for step by step instructions
     """
     results = []
-    input_text = TEXT.strip()
+    input_text = text.strip()
     lines = input_text.split("\n")
     for line in lines:
         line = line.strip()
         if line[0] in ascii_lowercase:
             word_list = line.split(" ")
             word = (word_list[-1:])
+            word = word[0]
             word = word.strip(".!")
-            print(word)
+            results.append(word)
+    return results    
       
 
-slice_and_dice(TEXT)        
+print(slice_and_dice(TEXT))        
